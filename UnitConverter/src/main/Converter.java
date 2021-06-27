@@ -14,7 +14,7 @@ public class Converter {
 			System.out.println("3. Miles to Kilometers");
 			System.out.println("4.Quit");
 		}
-		while(menuSelection != 0 );
+		while(menuSelection != 0);
 		
 
 		System.out.println("What would you like to convert?");
@@ -49,21 +49,21 @@ public class Converter {
 	public static void ounceToCup() {
 		Scanner scanDbl = new Scanner(System.in);
 		double userDbl = scanDbl.nextDouble();
-		System.out.print(userDbl/8);
+		System.out.print("There are " + userDbl/8 + " ounce(s) in a cup.");
 	
 	}
 	
 	public static void feetToMeters() {
 		Scanner scanDbl = new Scanner(System.in);
 		double userDbl = scanDbl.nextDouble();
-		System.out.print(userDbl/3.281);
+		System.out.print("There are " + userDbl/3.281 + " feet in a meter.");
 	
 	}
 	
 	public static void milesToKilometers() {
 		Scanner scanDbl = new Scanner(System.in);
 		double userDbl = scanDbl.nextDouble();
-		System.out.print(userDbl * 1.609);
+		System.out.print("There are " + userDbl * 1.609+ " mile(s) in a kilometer.");
 	
 	}
 	
