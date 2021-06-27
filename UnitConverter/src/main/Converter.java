@@ -8,11 +8,13 @@ public class Converter {
 		
 		int menuSelection = 0;
 		
-		while(menuSelection != 0 ) {
+		do {
 			System.out.println("1. Ounces to Cups");
 			System.out.println("2. Feet to Meters");
 			System.out.println("3. Miles to Kilometers");
+			System.out.println("4.Quit");
 		}
+		while(menuSelection != 0 );
 		
 		Scanner newScan = new Scanner(System.in);
 		System.out.println("What would you like to convert?");
@@ -33,6 +35,11 @@ public class Converter {
 		default:
 			System.out.println("This is not an option.");
 			break;
-		}
-	}
-}
+		}//End While do loop
+		
+		System.out.println("Please enter what you would like to convert: ");
+			
+		
+	}//End Main
+	
+}//End Converter Class
