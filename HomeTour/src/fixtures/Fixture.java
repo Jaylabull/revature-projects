@@ -15,6 +15,10 @@ public class Fixture {
 		this.longDescription = longDescription;
 		this.exitOptions = exitOptions;
 	}
+	
+	public Fixture() {
+		
+	}
 
 	public String getName() {
 		return name;

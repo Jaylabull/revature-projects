@@ -7,6 +7,7 @@ public class Room extends Fixture {
 	protected Room[] exits = new Room[4];
 //	    {left, right, forward, backward}
 //		{0       1  	  2		   3    }
+
 	    
 	    //constructor
 		public Room(String name, String shortDescription, String longDescription, String exitOptions) {
@@ -18,6 +19,10 @@ public class Room extends Fixture {
 			this.exits = new Room[4];
 			
 	}
+
+		public Room() {
+			
+		}
 
 		//getters and setters
 		public Room[] getExits(Room[] exits) {

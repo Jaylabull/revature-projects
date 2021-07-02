@@ -4,17 +4,16 @@ import java.util.Scanner;
 
 import fixtures.Room;
 
+
 public class Main {
 	private static Scanner scan = new Scanner(System.in);
 	public static void main(String[] args) {
-		Room someRoom;
 		RoomManager room = new RoomManager();
 		Room currentRoom = room.getStartRm();
 		room.init();
 		
 		Player player = new Player();
-		someRoom = player.getCurrentRoom().getExit("forward");
-		player.setCurrentRoom(room.getStartRm());
+		Player.setCurrentRoom(room.getStartRm());
 		
 		String userInput = " ";
 
@@ -25,7 +24,9 @@ public class Main {
 			userInput= scan.nextLine().toLowerCase();
 			printRoom(player);
 			
-			Room nxtRoom = currentRoom.getExit(userInput);
+			Room nxtRoom = new Room();
+			nxtRoom =  currentRoom.getExit(userInput);
+	
 			
 			String[] command = collectInput();
 		
@@ -58,12 +59,28 @@ public class Main {
 	}
 	//parse method
 	private static void moveRooms(String[] command, Player player) {
-//		Room[] findExits = new Room();
-//		findExits = findExits.getExits();
 		
-		String[] userCommand = command;
-		Player playerCurrent = player;
-		//if-else statement? 
+
+		
+		if (command[0].equals("quit")) {
+			System.out.println("Game cancelled.");
+		}
+		switch(command[1]) {
+		
+		case "left":
+			player.getCurrentRoom().getExitOptions().contains("left");
+			break;
+		case "right":
+			player.getCurrentRoom().getExitOptions().contains("right");
+			break;
+		case "forward":
+			player.getCurrentRoom().getExitOptions().contains("forward");
+			break;
+		case "backward":
+			player.getCurrentRoom().getExitOptions().contains("backward");
+			break;
+		
+		}
 		
 		
 	}
