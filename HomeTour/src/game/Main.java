@@ -25,7 +25,7 @@ public class Main {
 			printRoom(player);
 			
 			Room nxtRoom = new Room();
-			nxtRoom =  currentRoom.getExit(userInput);
+			nxtRoom =  nxtRoom.getExit(userInput);
 	
 			
 			String[] command = collectInput();
