@@ -9,15 +9,12 @@ public class Main {
 	private static Scanner scan = new Scanner(System.in);
 	public static void main(String[] args) {
 		RoomManager room = new RoomManager();
-		Room currentRoom = room.getStartRm();
 		room.init();
-		
 		Player player = new Player();
 		Player.setCurrentRoom(room.getStartRm());
 		
 		String userInput = " ";
 
-		 
 		
 		do {
 			System.out.println("Where would you like to go?");
@@ -27,16 +24,15 @@ public class Main {
 			Room nxtRoom = new Room();
 			nxtRoom =  nxtRoom.getExit(userInput);
 	
-			
 			String[] command = collectInput();
-		
 			moveRooms(command, player);
+
 			
 			if (nxtRoom != null) {
-				currentRoom = nxtRoom;
 			}
 			
 		}while(!userInput.equals("quit"));
+		
 
 	}
 
@@ -49,8 +45,7 @@ public class Main {
 		
 	}
 	
-	private static String[] collectInput() {
-		
+	private static String[] collectInput() {;
 		String userInput = scan.nextLine();
 		
 		String[] newInput = userInput.toLowerCase().split(" ");
@@ -65,6 +60,8 @@ public class Main {
 		if (command[0].equals("quit")) {
 			System.out.println("Game cancelled.");
 		}
+		
+		
 		switch(command[1]) {
 		
 		case "left":
