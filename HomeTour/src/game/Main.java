@@ -18,6 +18,11 @@ public class Main {
 		
 		do {
 			System.out.println("Where would you like to go?");
+			System.out.println("You are current in the Living Room\n");
+			System.out.println("****************************************");
+//			System.out.println("Right: " + "\n"
+//					+ "Forward: The Bedroom");
+			System.out.println(player.getCurrentRoom().getExitOptions());
 			userInput= scan.nextLine().toLowerCase();
 			printRoom(player);
 			
@@ -25,10 +30,11 @@ public class Main {
 			nxtRoom =  nxtRoom.getExit(userInput);
 	
 			String[] command = collectInput();
-			moveRooms(command, player);
+		
 
 			
 			if (nxtRoom != null) {
+				moveRooms(command, player);
 			}
 			
 		}while(!userInput.equals("quit"));
@@ -41,8 +47,10 @@ public class Main {
 		System.out.println(player.getCurrentRoom().getShortDescription());
 		System.out.println(player.getCurrentRoom().getLongDescription());
 		System.out.println(player.getCurrentRoom().getExitOptions());
-		System.out.println("Which direction would you like to go?");
-		
+		System.out.println("You are current in the " + player.getCurrentRoom().getName() + "\n "
+				+ "Please type in 'go' and the direction would you like to go?\n");
+		System.out.println("****************************************");
+		//printRoom(player);
 	}
 	
 	private static String[] collectInput() {;
@@ -55,7 +63,7 @@ public class Main {
 	//parse method
 	private static void moveRooms(String[] command, Player player) {
 		
-
+		command[1] = "go";
 		
 		if (command[0].equals("quit")) {
 			System.out.println("Game cancelled.");
